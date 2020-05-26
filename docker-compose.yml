@@ -1,0 +1,21 @@
+version: '3'
+services: 
+    mongodb:
+        image: mongo:latest
+        container_name: "mongodb"
+        ports:
+          - "1234:27017"
+        network_mode: bridge
+    node-web-app:
+        image: sannonthachai/test-project:v0.0.3
+        container_name: node-web-app
+        links:
+            - mongodb
+        ports: 
+            - "5000:8080"
+        command: npm start
+        network_mode: bridge
+        environment:
+            - MONGO_URL=mongodb://mongodb:27017
+            - OPTION_USE_NEW_URL_PARSER=true
+            - OPTION_USER_UNIFIED_TOPOLOGY=true
