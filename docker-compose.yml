@@ -7,7 +7,7 @@ services:
           - "1234:27017"
         network_mode: bridge
     node-web-app:
-        image: sannonthachai/test-project:v0.0.3
+        image: sannonthachai/test-project:v0.0.0
         container_name: node-web-app
         links:
             - mongodb
