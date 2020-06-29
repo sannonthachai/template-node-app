@@ -2,8 +2,8 @@ import { ErrorHandler } from '../middleware/exception_middleware'
 
 export class TemplateController {
 
-    constructor(router, TemplateService) {
-        this.router = router
+    constructor(express, TemplateService) {
+        this.router = express.Router()
         this.templateService = TemplateService
     }
 

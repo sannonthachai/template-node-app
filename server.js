@@ -30,8 +30,7 @@ mongoose.connect(setting.mongoURL, setting.options)
         .catch(err => console.log(err))
 
 // App
-const app = express();
-const router = express.Router()
+const app = express()
 
 // ################## Set up #####################
 app.use(express.json())
@@ -56,8 +55,8 @@ const templateService = new TemplateService(templateRepository)
 const fileService = new FileService(fileRepository, fs)
 
 // Initial Controllers
-const templateController = new TemplateController(router, templateService, request)
-const fileController = new FileController(router, fileService, multiparty)
+const templateController = new TemplateController(express, templateService, request)
+const fileController = new FileController(express, fileService, multiparty)
 
 // ################## Routes #####################
 app.use('/test', templateController.initial())

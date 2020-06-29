@@ -1,7 +1,7 @@
 export class FileController {
 
-    constructor(router, FileService, multiparty) {
-        this.router = router
+    constructor(express, FileService, multiparty) {
+        this.router = express.Router()
         this.fileService = FileService
         this.multiparty = multiparty
     }
