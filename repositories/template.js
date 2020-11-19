@@ -4,19 +4,17 @@ export class TemplateRepository {
         this.templateModel = this.templateDomain.initialModel()
     }
 
-    async testFindByName(name) {
+    testFindByName = async (name) => {
         let documentByName = await this.templateModel.findOne({ name: name })
-
         return documentByName
     }
 
-    async testFindAll() {
+    testFindAll = async () => {
         let allDocuments = await this.templateModel.find()
-
         return allDocuments
     }
 
-    async testSave(data) {
+    testSave = async (data) => {
         let templateDocument = new this.templateModel(data)
         await templateDocument.save()
     }

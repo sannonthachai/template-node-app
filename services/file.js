@@ -14,6 +14,8 @@ export class FileService {
             contentType: String
         }
 
+        console.log(file.file[0].headers)
+
         image.name = file.file[0].originalFilename
         image.data = this.fs.readFileSync(file.file[0].path)
         image.contentType = file.file[0].headers["content-type"]

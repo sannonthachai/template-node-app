@@ -4,11 +4,16 @@ services:
         image: mongo:latest
         container_name: "mongodb"
         ports:
-          - "1234:27017"
+          - "27017:27017"
         network_mode: bridge
     node-web-app:
         image: sannonthachai/test-project:v0.0.0
         container_name: node-web-app
+        build: 
+            context: .
+            dockerfile: Dockerfile.dev
+        volumes: 
+            - .:/usr/src/app
         links:
             - mongodb
         ports: 

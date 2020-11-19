@@ -1,4 +1,4 @@
-import { ErrorHandler } from '../middleware/exception_middleware'
+import { ErrorHandler } from '../utils/error-handler'
 
 export class TemplateController {
     

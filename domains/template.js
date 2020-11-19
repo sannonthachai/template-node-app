@@ -9,7 +9,7 @@ export class TemplateDomain {
         })
     }
 
-    initialModel() {
+    initialModel = () => {
         return this.mongoose.model('TemplateModel', this.templateSchema)
     }
 }
